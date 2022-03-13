@@ -1,0 +1,18 @@
+body {
+  font-family: 'Darker Grotesque', sans-serif;
+  position: absolute;
+}
+
+.card-header {
+  background: #C99171;
+}
+
+/* button styling */
+.btn {
+  background: #FECB91;
+}
+
+.fa-eraser {
+  display: flex;
+  justify-content: center;
+}
