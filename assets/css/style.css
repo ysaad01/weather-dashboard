@@ -1,10 +1,10 @@
 body {
   font-family: 'Darker Grotesque', sans-serif;
-  position: absolute;
 }
 
 .card-header {
   background: #C99171;
+  text-align: center;
 }
 
 /* button styling */
@@ -12,7 +12,12 @@ body {
   background: #FECB91;
 }
 
-.fa-eraser {
-  display: flex;
-  justify-content: center;
+#clearBtn{
+  margin-left: 90px;
+}
+
+/* footer styling */
+footer h4{
+  text-align: center;
+  font-size: 17px;
 }
