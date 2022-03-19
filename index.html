@@ -1,137 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <!-- bootstrap link -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+  
   <!-- font awesome link -->
   <script src="https://kit.fontawesome.com/b18a78942f.js" crossorigin="anonymous"></script>
-
+  
   <!-- google fonts link -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@600&display=swap" rel="stylesheet">
-
+  
   <!-- css file -->
   <link rel="stylesheet" href="./assets/css/style.css" />
-
+  
   <!-- fav icon -->
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon_io/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon_io/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon_io/favicon-16x16.png">
   <link rel="manifest" href="./assets/images/favicon_io/site.webmanifest">
-
+  
   <title>Weather Dashboard</title>
 </head>
+
 <body>
-  <h1><i class="fa-solid fa-temperature-quarter"></i>Weather Dashboard</h1>
 
-  <main>
+  <main class="container">
+    <h1>Weather Dashboard</h1>
     <div class="row">
-      <!-- search city card -->
-      <section class="col">
-        <div id="searchBox-container" class="row">
-          <aside id="searchBox-card" class="card border-light">
-            <div id="searchBox-header" class="card-header">Search City</div>
-
-            <div id="searchBox-body" class="card-body input-group">
-              <input type="text" class="form-control" placeholder="Type City Name Here" aria-label="search city name" aria-describedby="city searchBox">
-
-              <button id="searchBtn" class="btn px-4"><i class="fa-solid fa-magnifying-glass-location"></i></button>
-            </div>
-          </aside>
+      <aside class="col-sm-3 sideNav">
+        <div id="searchbox" class="col">
+          <form>
+            <input id="addCity" type="text" class="form-control" placeholder="Enter City Here">
+            <button id="searchBtn" class="btn">Search City</button>
+          </form>
         </div>
 
-        <!-- search history card -->
-        <div id="search-history-container" class="row">
-          <aside id="search-history-card" class="card border-light">
-            <div id="search-history-header" class="card-header">Recent Searches</div>
+        <div id="cityList"></div>
+      </aside>
 
-            <div class="col-1 card-body">
-              <div class="list-group list-group-flush" id="search-history-list"></div>
-
-              <!-- clear search history button -->
-              <button id="clearBtn" class="btn px-4"><i class="fa-solid fa-eraser"></i></button>
-            </div>
-          </aside>
+      <section class="col-sm-9 container">
+        <div id="today" class="row"></div>
+        <div class="col">
+          <h2>5-Day Forecast</h2>
         </div>
-      </section>
-
-      <section id="weather-box" class="col-md-9">
-
-        <!-- current weather card -->
-        <div class="weather-box-container">
-          <aside class="card border-light">
-            <div id="current-weather" class="card-header">
-
-            </div>
-
-            <div class="card-body">
-              <div id="current-weather-body">
-                <div id="current-weather-icon" class="col-4">
-
-                </div>
-
-                <!-- current weather icons -->
-                <div class="col-9">
-                  <div class="tempNow">
-
-                  </div>
-
-                  <div class="humidityNow">
-                    
-                  </div>
-
-                  <div class="windNow">
-
-                  </div>
-
-                  <div class="uvNow">
-
-                  </div>
-                </div>
-              </div>
-            </div>
-          </aside>
+      
+        <div id="deck" class="row">
+          <div class="col card-deck"></div>
         </div>
-
-        <!-- 5 day forecast card  -->
-        <section class="forecast-container">
-          <div class="card border-light">
-            <div id="forecast-header" class="card-header">5 Day Forecast</div>
-
-            <div class="card-body">
-
-              <div id="forecast-body" class="justify-content-center">
-
-              </div>
-
-            </div>
-          </div>
-        </section>
       </section>
     </div>
+
+    <!-- footer section -->
+    <footer>
+      <h4> &#10085 Developed with love by Yas.</h4>
+    </footer>
   </main>
-
-  <!-- footer section -->
-  <footer>
-    <h4> &#10085 Developed with love by Yas.</h4>
-  </footer>
-
-  <!-- jquery cdn -->
-  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-    integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous">
-  </script>
-
-  <!-- moment.js cdn -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-
-  <!-- js file -->
-  <script src="./assets/js/script.js"></script>
-</body>
-</html>
+      
+      <!-- jquery cdn -->
+      <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous">
+        </script>
+      
+      <!-- moment.js cdn -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+      
+      <!-- js file -->
+      <script src="./assets/js/script.js"></script>
+      </body>
+      
+      </html>
