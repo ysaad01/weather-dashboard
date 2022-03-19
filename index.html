@@ -32,47 +32,88 @@
 <body>
 
   <main class="container">
-    <h1>Weather Dashboard</h1>
+    <h1><i class="fa-solid fa-temperature-quarter"></i>Weather Dashboard</h1>
     <div class="row">
-      <aside class="col-sm-3 sideNav">
-        <div id="searchbox" class="col">
-          <form>
-            <input id="addCity" type="text" class="form-control" placeholder="Enter City Here">
-            <button id="searchBtn" class="btn">Search City</button>
+
+      <aside class="col-sm-3">
+        <!-- SEARCH FORM -->
+        <div class="card">
+          <h3 class="card-header text-uppercase">Search By City</h3>
+          <form id="search-form" class="card-body">
+            <label class="form-label" for="cityName">City</label>
+            <input name="cityName" id="cityName" type="text" autofocus="true" />
+            <button id="searchBtn" class="btn px-2"><i class="fa-solid fa-magnifying-glass-location"></i></button>
           </form>
         </div>
 
-        <div id="cityList"></div>
+        <!-- SEARCH HISTORY -->
+        <div class="card-body" id="searchHistory">
+          <div id="search-history-card" class="card border-light">
+            <div id="search-history-header" class="card-header">Recent Searches</div>
+          
+            <div class="col-1 card-body">
+              <div class="list-group list-group-flush" id="search-history-list"></div>
+          
+              <!-- clear search history button -->
+              <button id="clearBtn" class="btn px-3"><i class="fa-solid fa-eraser"></i></button>
+            </div>
+          </div>
+        </div>
       </aside>
 
       <section class="col-sm-9 container">
-        <div id="today" class="row"></div>
-        <div class="col">
-          <h2>5-Day Forecast</h2>
-        </div>
-      
-        <div id="deck" class="row">
-          <div class="col card-deck"></div>
-        </div>
-      </section>
-    </div>
+        <div class="col-md-12 col-sm-12">
+          <!-- CURRENT WEATHER DATA -->
+          <div class="card border-2 border-dark bg-transparent">
+            <div class="card-body">
+              <div class="d-flex d-inline">
+                <h3 class="card-title-now">
+                  <span id="city-search"></span>
+                </h3>
+              </div>
+              <div class="d-flex">
+                <div class="w-50">
+                  <p class="card-subtitle-now pb-2 pt-2" id="temp-now"></p>
+                  <p class="card-subtitle-now pb-2" id="wind-now"></p>
+                  <p class="card-subtitle-now pb-2" id="humidity-now"></p>
+                  <div class="d-flex flex-row">
+                    <p class="card-subtitle-now p-1">UV Index: </p>
+                    <div class="uv-now p-1 h-50" id="uv-now"></div>
+                  </div>
+                </div>
+                <div class="w-50">
+                  <img src="" alt="weather icon" class="wicon">
+                </div>
+              </div>
+            </div>
+          </div>
 
-    <!-- footer section -->
-    <footer>
-      <h4> &#10085 Developed with love by Yas.</h4>
-    </footer>
+          <!-- 5 DAY FORECAST -->
+          <div class="card bg-transparent mt-5 border-0">
+            <h4 class="five-forecast-title text-center">5 Day Weather Forecast</h4>
+            <div class="row d-flex justify-content-around" id="five-day-card">
+              <!-- INSERT CARDS WITH JS FOR NEXT 5 DAYS -->
+            </div>
+      </section>
+
+    </div>
   </main>
-      
-      <!-- jquery cdn -->
-      <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous">
-        </script>
-      
-      <!-- moment.js cdn -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-      
-      <!-- js file -->
-      <script src="./assets/js/script.js"></script>
-      </body>
-      
-      </html>
+
+  <!-- footer section -->
+  <footer>
+    <h4> &#10085 Developed with love by Yas.</h4>
+  </footer>
+  
+  <!-- jquery cdn -->
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+    integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous">
+    </script>
+  
+  <!-- moment.js cdn -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  
+  <!-- js file -->
+  <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
