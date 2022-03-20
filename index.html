@@ -38,24 +38,26 @@
       <aside class="col-sm-3">
         <!-- SEARCH FORM -->
         <div class="card">
-          <h3 class="card-header text-uppercase">Search By City</h3>
+          <h3 class="card-header">Search By City</h3>
           <form id="search-form" class="card-body">
-            <label class="form-label" for="cityName">City</label>
-            <input name="cityName" id="cityName" type="text" autofocus="true" />
-            <button id="searchBtn" class="btn px-2"><i class="fa-solid fa-magnifying-glass-location"></i></button>
+            <label class="form-label" for="cityName"></label>
+            <input name="cityName" id="searchCityName" type="text" autofocus="true" />
+            <button id="searchBtn" class="btn px-3"><i class="fa-solid fa-magnifying-glass-location"></i></button>
           </form>
         </div>
 
         <!-- SEARCH HISTORY -->
-        <div class="card-body" id="searchHistory">
-          <div id="search-history-card" class="card border-light">
-            <div id="search-history-header" class="card-header">Recent Searches</div>
+        <div class="card">
+          <div class="card-body" id="searchHistory">
+            <div id="search-history-card" class="card border-light">
+              <h4 id="search-history-header" class="card-header">Recent Searches</h4>
           
-            <div class="col-1 card-body">
-              <div class="list-group list-group-flush" id="search-history-list"></div>
+              <div>
+                <div class="list-group list-group-flush" id="searchHistoryList"></div>
           
               <!-- clear search history button -->
-              <button id="clearBtn" class="btn px-3"><i class="fa-solid fa-eraser"></i></button>
+                <button id="clearBtn" class="btn px-5"><i class="fa-solid fa-eraser"></i></button>
+              </div>
             </div>
           </div>
         </div>
@@ -63,12 +65,13 @@
 
       <section class="col-sm-9 container">
         <div class="col-md-12 col-sm-12">
-          <!-- CURRENT WEATHER DATA -->
+
+          <!-- current weather data section -->
           <div class="card border-2 border-dark bg-transparent">
             <div class="card-body">
               <div class="d-flex d-inline">
                 <h3 class="card-title-now">
-                  <span id="city-search"></span>
+                  <span id="city-search" class="text-capitalize"></span>
                 </h3>
               </div>
               <div class="d-flex">
@@ -88,10 +91,10 @@
             </div>
           </div>
 
-          <!-- 5 DAY FORECAST -->
+          <!-- 5 day forecast section -->
           <div class="card bg-transparent mt-5 border-0">
-            <h4 class="five-forecast-title text-center">5 Day Weather Forecast</h4>
-            <div class="row d-flex justify-content-around" id="five-day-card">
+            <h4 class="five-forecast-title text-center card-header">5 Day Weather Forecast</h4>
+            <div class="row d-flex justify-content-around" id="fiveDayForecast">
               <!-- INSERT CARDS WITH JS FOR NEXT 5 DAYS -->
             </div>
       </section>
