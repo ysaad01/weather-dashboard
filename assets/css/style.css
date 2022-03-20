@@ -4,6 +4,7 @@ body {
 
 .weather-h1 {
   color: #B03B37;
+  font-weight: bolder;
 }
 
 .card-header {
@@ -46,7 +47,7 @@ body {
 
 /* button styling */
 .btn {
-  background: #EB8947;
+  background: #3B3B6D;
   color: #fff;
 }
 
