@@ -59,32 +59,32 @@ function currentForecast(currentCity) {
 
         // USE MOMENT.JS TO SHOW DATE
         var currentDate = new Date(currentData.current.dt * 1000);
-        // SHOW SEARCHED CITY NAME
+        /* display searched city name */
         $("#city-search").text(
           currentCity + " " + moment(currentDate).format("dddd, MMMM Do YYYY")
         );
-        // ADD ICON
+        /* add icon */
         var iconCode = currentData.current.weather[0].icon;
         $(".wicon").attr(
           "src",
           `http://openweathermap.org/img/w/${iconCode}.png`
         );
-        // SHOW CURRENT TEMP
+        /* display current */
         $("#temp-now").text(
           "Temperature: " + currentData.current.temp + " \u00B0F"
         );
-        // SHOW CURRENT WIND SPEED
+        /* display current wind speed */
         $("#wind-now").text(
           "Wind Speed: " + currentData.current.wind_speed + " MPH"
         );
-        // SHOW CURRENT HUMIDITY
+        /* display current humidity */
         $("#humidity-now").text(
           "Humidity: " + currentData.current.humidity + " %"
         );
-        // SHOW CURRENT UV INDEX
+        /* display curring uv index */
         $("#uv-now").text(currentData.current.uvi);
 
-        // STYLING DEPENDING ON UV LEVEL
+        //* uv level styling */
         var uvClassName = "";
         if (currentData.current.uvi < 3) {
           uvClassName = "uvGreen";
@@ -106,28 +106,21 @@ function currentForecast(currentCity) {
 /* 5 day forecast function */
 function futureForecast(futureData) {
 
-  // LOOP THROUGH MOST RECENT 5 DAYS AND DISPLAY DATA
+  /* 5 day forecast cardZ */
     $("#fiveDayForecast").empty();
     for (var i = 1; i < 6; i++) {
-      // USE MOMENT.JS TO SHOW DAY
+      /* display date using moment.js */
       var date = new Date(futureData.daily[i].dt * 1000)
-      // MAKES 5 FORECAST CARDS
 
-      var forecastCard = $("<div class='card col-md-2 col-sm-12 mb-2 bg-primary'></div>")
+      /* dynamically creates 5 day forecast cards */
+      var forecastCard = $("<div class='card col-md-2 col-sm-12 mb-2 card-forecast'></div>")
       forecastCard.html(`<div class="card-body forecast">
-      <h6 class="card-title" id="d1">${moment(date).format("dddd, M/D")}</h6>
-      <img class="wicon" alt="weather icon" src="http://openweathermap.org/img/w/${
-        futureData.daily[i].weather[0].icon
-      }.png"
-      <p class="card-subtitle pb-2">Temp: ${
-        futureData.daily[i].temp.day
-      } \u00B0F</p>
-      <p class="card-subtitle pb-2">Wind Speed: ${
-        futureData.daily[i].wind_speed
-      } MPH</p>
-      <p class="card-subtitle pb-2">Humidity: ${
-        futureData.daily[i].humidity
-      } %</p>
+      <h6 class="card-title" id="d1">${moment(date).format("ddd, M/D")}</h6>
+      <img alt="weather icon" src="http://openweathermap.org/img/w/${futureData.daily[i].weather[0].icon}.png"
+      <br>
+      <p class="card-subtitle pb-2">Temp: ${futureData.daily[i].temp.day} \u00B0F</p>
+      <p class="card-subtitle pb-2">Wind Speed: ${futureData.daily[i].wind_speed} MPH</p>
+      <p class="card-subtitle pb-2">Humidity: ${futureData.daily[i].humidity} %</p>
       </div>`);
       $("#fiveDayForecast").append(forecastCard);
       day++

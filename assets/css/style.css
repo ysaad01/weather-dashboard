@@ -2,22 +2,90 @@ body {
   font-family: 'Darker Grotesque', sans-serif;
 }
 
+.weather-h1 {
+  color: #B03B37;
+}
+
 .card-header {
-  background: #C99171;
+  background: #FBAB34;
   text-align: center;
+}
+
+#searchCityName {
+  width: 75%;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+.wicon {
+  width: 50%;
+}
+
+/* uv styling */
+.uvRed {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+}
+
+.uvYellow {
+  background-color: yellow;
+  font-weight: bold;
+  color: black;
+}
+
+.uvGreen {
+  background-color: green;
+  font-weight: bold;
+  color: white;
 }
 
 /* button styling */
 .btn {
-  background: #FECB91;
+  background: #EB8947;
+  color: #fff;
 }
 
 #clearBtn{
   margin-left: 90px;
+  margin-top: 1vw;
 }
 
+/* 5 day forecast */
+.card-forecast {
+  background-color: #B03B37;
+}
+
+.five-forecast-title {
+  font-size: 1.5vw;
+  margin-bottom: 1vw;
+}
+
+.forecast {
+  color: antiquewhite;
+  font-weight: bold;
+}
+
+.card-title {
+  font-size: 1vw;
+}
+
+.card-body h6 {
+  font-size: 1.25vw;
+  font-weight: bold;
+}
+
+.card-subtitle {
+  font-size: .90rem;
+}
 /* footer styling */
-footer h4{
+footer h4 {
   text-align: center;
   font-size: 17px;
+  margin-top: 15vw;
 }
+

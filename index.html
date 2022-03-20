@@ -32,11 +32,11 @@
 <body>
 
   <main class="container">
-    <h1><i class="fa-solid fa-temperature-quarter"></i>Weather Dashboard</h1>
+    <h1><i class="fa-solid fa-temperature-quarter"></i><span class="weather-h1">Weather </span> Dashboard</h1>
     <div class="row">
 
       <aside class="col-sm-3">
-        <!-- SEARCH FORM -->
+        <!-- search city card -->
         <div class="card">
           <h3 class="card-header">Search By City</h3>
           <form id="search-form" class="card-body">
@@ -46,13 +46,13 @@
           </form>
         </div>
 
-        <!-- SEARCH HISTORY -->
+        <!-- search history card -->
         <div class="card">
           <div class="card-body" id="searchHistory">
             <div id="search-history-card" class="card border-light">
               <h4 id="search-history-header" class="card-header">Recent Searches</h4>
           
-              <div>
+              <div class="flex">
                 <div class="list-group list-group-flush" id="searchHistoryList"></div>
           
               <!-- clear search history button -->
@@ -93,7 +93,7 @@
 
           <!-- 5 day forecast section -->
           <div class="card bg-transparent mt-5 border-0">
-            <h4 class="five-forecast-title text-center card-header">5 Day Weather Forecast</h4>
+            <h3 class="five-forecast-title text-center card-header">5 Day Weather Forecast</h3>
             <div class="row d-flex justify-content-around" id="fiveDayForecast">
               <!-- INSERT CARDS WITH JS FOR NEXT 5 DAYS -->
             </div>
